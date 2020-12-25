@@ -1,34 +1,11 @@
-module Day1a where
+module Day1.Numbers (numbers) where
 
-import Prelude
-
-import Effect (Effect)
-import Effect.Console (log)
 import Data.List (List, fromFoldable, sort, reverse, (:))
-import Data.Tuple (Tuple(..))
-
-main :: Effect Unit
-main = do
-  log "The correct number is:"
-  let Tuple a b = solve sortedNumbers sortedLargeNumbers
-  log $ show (a * b)
-
-solve :: List Int -> List Int -> Tuple Int Int
-solve (x:xs) (y:ys) = case compare (x + y) 2020 of
-    GT -> solve (x:xs) ys
-    EQ -> Tuple x y
-    LT -> solve xs (y:ys)
-solve _ _ = Tuple 0 0
-
-sortedNumbers :: List Int
-sortedNumbers = sort numbers
-
-sortedLargeNumbers :: List Int
-sortedLargeNumbers = reverse sortedNumbers
 
 numbers :: List Int
 numbers =
-    fromFoldable [ 1322
+    fromFoldable
+    [ 1322
     , 1211
     , 1427
     , 1428
