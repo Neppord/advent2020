@@ -1,6 +1,6 @@
 module Day1.Numbers (numbers) where
 
-import Data.List (List, fromFoldable, sort, reverse, (:))
+import Data.List (List, fromFoldable)
 
 numbers :: List Int
 numbers =

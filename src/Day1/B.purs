@@ -1,4 +1,4 @@
-module Day11.A where
+module Day1.B where
 
 import Prelude
 
